@@ -114,9 +114,45 @@ The value -0.69 should be -0.67 as shown in the annotated screenshot below:
 
 ![](images/242.png)
 
+
+
+### Chapter 9
+
+**Page 291**
+
+In original text of the first paragraph in  p. 291
+
+> We can see that the MSE on the training dataset is **larger**  than on the test set, which is an indicator that our model is slightly overfitting the training data in this case. 
+
+should be corrected as follows:
+
+> We can see that the MSE on the training dataset is **less**  than on the test set, which is an indicator that our model is slightly overfitting the training data in this case.
+
+**Page 292**
+
+Not an error, but in the proof showing that the $$R^2$$ is a rescaled version of the MSE,
+
+$$
+\begin{align*}
+R^2 
+&= 1 - \frac{SSE}{SST} \\
+&= 1 - \frac{ \frac{1}{n} \sum_{i=1}^{n} \big ( y^{(i)} - \hat{y}^{(i)} \big )^{2} }
+        { \frac{1}{n} \sum_{i=1}^{n} \big ( y^{(i)} - \mu_{y} \big )^{2} } \\
+&= 1 - \frac{MSE}{Var(y)}
+\end{align*}
+$$
+
+it might be good to insert 
+
+$$
+= 1 - \frac{\frac{1}{n}SSE}{\frac{1}{n}SST}
+$$
+
+after the first line to make it easier to follow.
+
 ### Chapter 11
 
-**Page 348:**
+**Page 34:**
 
 The code comments for the `NeuralNetMLP`'s are outdated [[#23](https://github.com/rasbt/machine-learning-book/issues/23)]. Originally, I implemented the following computation
 
