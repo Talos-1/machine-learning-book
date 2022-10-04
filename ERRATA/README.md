@@ -173,7 +173,11 @@ after the first line to make it easier to follow.
 
 ### Chapter 11
 
-**Page 34:**
+**Page 338:**
+
+It would be better to use [ ] for the training example index for consistency later in this chapter.
+
+**Page 348:**
 
 The code comments for the `NeuralNetMLP`'s are outdated [[#23](https://github.com/rasbt/machine-learning-book/issues/23)]. Originally, I implemented the following computation
 
@@ -205,6 +209,12 @@ Similarly, the code comments for `z_out` should be
 # output dim: [n_examples, n_classes]
 z_out = np.dot(a_h, self.weight_out.T) + self.bias_out
 ```
+
+**Page 361**
+
+In the equation $L \big ( \mathbf{W}, \mathbf{b} \big ) =
+\frac{1}{n} \sum_{1}^{n} \frac{1}{t} \sum_{j=1}^{t} \big( y_{j}^{[i]} - a_{j}^{(out)[i]} \big )^{2}$, the training example index is missing; it should be $L \big ( \mathbf{W}, \mathbf{b} \big ) =
+\frac{1}{n} \sum_{i=1}^{n} \frac{1}{t} \sum_{j=1}^{t} \big( y_{j}^{[i]} - a_{j}^{(out)[i]} \big )^{2}$
 
 **Page 366**
 
@@ -319,6 +329,11 @@ accuracy_hist_train[epoch] /= n_train/
 
 ### Chapter 14
 
+
+**Page 458**
+
+The square brackets [ ] on this page are layout errors and should be floor symbols ⌊ ⌋
+
 **Page 472**
 
 In the figure, the `y_pred` value for the `BCELoss` is 0.8, but it should be 0.69, because of sigmoid(0.8) = 0.69. You can find an updated figure [here](../ch14/figures/14_11.png).
@@ -332,6 +347,13 @@ Also, in the lines
 ```
 
 the phrases `w Probas` and `w Logits` should be flipped.  [[#34](https://github.com/rasbt/machine-learning-book/issues/34)]
+
+**Page 477**
+
+The square brackets [ ] on this page are layout errors and should be floor symbols ⌊ ⌋
+
+
+
 
 
 
@@ -355,6 +377,9 @@ In the following line
 
 the bias should be  `b_xh` instead of `b_hh`. However, the resulting output is correct.
 
+Also, the line at the bottom is missing the closing bracket
+
+    print(' Hidden :', ht.detach().numpy())
 
 
 **Page 519**
