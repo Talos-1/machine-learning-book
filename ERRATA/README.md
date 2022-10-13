@@ -6,7 +6,6 @@
 
 ### Chapter 2
 
-
 **Page 23**
 
 - It seems that the predicted label ŷ and the true label y got flipped.
@@ -177,6 +176,16 @@ after the first line to make it easier to follow.
 
 It would be better to use [ ] for the training example index for consistency later in this chapter.
 
+**Page 340:**
+
+In the second paragraph, $w_{j, k}(l)$ should be $w_{j, k}(l+1)$.
+
+**Page 342:**
+
+In paragraph 3, "$z(h)$ is our 1×m dimensional feature vector" should be  "$x(in)$ is our 1×m dimensional feature vector" 
+
+Last paragraph: "(The columns in this matrix represent the outputs for each sample.)" should be "(The rows in this matrix represent the outputs for each example.)"
+
 **Page 348:**
 
 The code comments for the `NeuralNetMLP`'s are outdated [[#23](https://github.com/rasbt/machine-learning-book/issues/23)]. Originally, I implemented the following computation
@@ -212,9 +221,22 @@ z_out = np.dot(a_h, self.weight_out.T) + self.bias_out
 
 **Page 361**
 
-In the equation $L \big ( \mathbf{W}, \mathbf{b} \big ) =
-\frac{1}{n} \sum_{1}^{n} \frac{1}{t} \sum_{j=1}^{t} \big( y_{j}^{[i]} - a_{j}^{(out)[i]} \big )^{2}$, the training example index is missing; it should be $L \big ( \mathbf{W}, \mathbf{b} \big ) =
-\frac{1}{n} \sum_{i=1}^{n} \frac{1}{t} \sum_{j=1}^{t} \big( y_{j}^{[i]} - a_{j}^{(out)[i]} \big )^{2}$
+In the equation 
+
+$$
+L(\mathbf{W}, \mathbf{b})=\frac{1}{n} \sum_1^n \frac{1}{t} \sum_{j=1}^t\left(y_j^{[i]}-a_j^{(o u t)[i]}\right)^2
+$$
+
+Test
+
+
+
+
+the training example index is missing; it should be 
+
+$$
+L(\mathbf{W}, \mathbf{b})=\frac{1}{n} \sum_{i=1}^n \frac{1}{t} \sum_{j=1}^t\left(y_j^{[i]}-a_j^{(o u t)[i]}\right)^2
+$$
 
 **Page 366**
 
@@ -368,6 +390,9 @@ Not an errata, but it would be good to clarify in the infobox that users have to
 
 The correct smile attribute is not `attr[18]` but `attr[31]`. Consequently, the plot on pg. 495 will look a bit different. The test accuracy on pg. 496 will be around 90.21%. And the pictures on pg. 497 will look a bit different. The [ch14_part2.ipynb](../ch14/ch14_part2.ipynb) Jupyter notebook in this GitHub repository was updated accordingly :).
 
+**Page 506**
+
+In Figure 15.6, under "Final output:" it said $W_{hy}$ instead of $W_{ho}$. This is corrected [here](https://github.com/rasbt/machine-learning-book/blob/main/ch15/figures/15_06.png).
 
 **Page 508**
 
@@ -415,3 +440,25 @@ I.e.,
 **Page 532**
 
 The learning rate (`lr=0.001`) is too low here. If we change it to `lr=0.005` we can get much better results.
+
+### Chapter 17
+
+**Page 617**
+
+In the sentence "The last convolutional layer uses kernels of size 7×7" it should have been "4×4".
+
+**Page 626**
+
+One of the KL divergence formulas, i.e., $K L(P \| Q)=-\sum_i P\left(x_i\right) \frac{P\left(x_i\right)}{Q\left(x_i\right)}$,  is missing the log. It should be
+
+
+$$
+K L(P \| Q)=-\sum_i P\left(x_i\right) \log\left(\frac{P\left(x_i\right)}{Q\left(x_i\right)}\right)
+$$
+
+
+### Chapter 18
+
+**Page 650**
+
+Add the bottom of Figure 18.9, it should have been h_fc x W_fc instead of W_fc x h_fc. It's updated  [here](https://github.com/rasbt/machine-learning-book/blob/main/ch18/figures/18_09.png) now.
